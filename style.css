@@ -60,22 +60,22 @@ html, body {
 }
 
 #about_me {
-	background-image: url('me.jpg');
+	background-image: url('./images/me.jpg');
 	background-size : cover;
 }
 
 #skills {
-	background-image: url('https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+	background-image: url('./images/skills.jpg');
 	background-size : cover;
 }
 
 #achievements {
-	background-image: url('https://images.unsplash.com/photo-1575438922952-8ebd22b0bc1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+	background-image: url('./images/achievements.jpg');
 	background-size : cover;
 }
 
 #projects {
-	background-image: url('https://images.unsplash.com/photo-1553678324-f84674bd7b24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+	background-image: url('./images/projects.jpg');
 	background-size : cover;
 }
 
