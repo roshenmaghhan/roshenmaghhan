@@ -56,7 +56,7 @@ html, body {
 	-moz-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
 	box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
 	display: none;
-	
+	cursor: pointer;
 }
 
 #about_me {
@@ -118,6 +118,7 @@ html, body {
 	display: flex;
   	justify-content: center;
   	align-items: center;
+  	cursor: pointer;
 }
 
 #home_txt {
@@ -138,6 +139,7 @@ html, body {
 	-moz-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
 	box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
 	opacity: 0;
+	cursor: pointer;
 }
 
 .socials {

@@ -27,8 +27,8 @@ function changeContent(text) {
 	$("#content_txt").delay(500).fadeOut();
 	setTimeout(function(){
 		document.getElementById("content_txt").innerHTML = text;
-	}, 800);
-	$("#content_txt").delay(1000).fadeIn();
+	}, 850);
+	$("#content_txt").delay(900).fadeIn();
 }
 
 function generateTabs(arr) {
