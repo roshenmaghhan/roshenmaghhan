@@ -1,0 +1,67 @@
+html, body {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	background-color: #FFDFCA;
+	padding: 0;
+	margin: 0;
+}
+
+#about_me {
+	background-color: #fff;
+	height: 40vh;
+	width: 45.5vw;
+	position: absolute;
+	-webkit-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	left: 3vw;
+	top: 5vh;
+	background-image: url('../images/me.jpg');
+	background-size: cover;
+	border-radius: 1vh;
+}
+
+#skills {
+	background-color: #fff;
+	height: 40vh;
+	width: 45.5vw;
+	position: absolute;
+	-webkit-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	right: 3vw;
+	top: 5vh;
+	background-image: url('../images/skills.jpg');
+	background-size: cover;
+	border-radius: 1vh;
+}
+
+#achievements {
+	background-color: #fff;
+	height: 40vh;
+	width: 45.5vw;
+	position: absolute;
+	-webkit-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	left: 3vw;
+	top: 47vh;
+	background-image: url('../images/achievements.jpg');
+	background-size: cover;
+	border-radius: 1vh;
+}
+
+#projects {
+	background-color: #fff;
+	height: 40vh;
+	width: 45.5vw;
+	position: absolute;
+	-webkit-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	box-shadow: -2px 2px 41px -12px rgba(0,0,0,0.75);
+	right: 3vw;
+	top: 47vh;
+	background-image: url('../images/projects.jpg');
+	background-size: cover;
+	border-radius: 1vh;	
+}
