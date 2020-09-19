@@ -3,11 +3,95 @@
 <head>
 	<title>ROSHEN MAGHHAN</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,500&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-	<div id="about_me"></div>
-	<div id="skills"></div>
-	<div id="achievements"></div>
-	<div id="projects"></div>
+	<div id="rotate">
+		<p id="rotate_txt">ROTATE DEVICE TO POTRAIT MODE.</p>
+	</div>
+
+	<div id="background-wrap">
+		<p id="coded">CODED FROM SCRATCH, BY ROSHEN MAGHHAN.</p>
+
+		<div class="list" id="div1" data-value="0" style="top: 1vh;">
+			<p class="listTxt" id="tab1"></p>
+		</div>
+		<div class="list" id="div2" data-value="1" style="top: 16.8vh;">
+			<p class="listTxt" id="tab2"></p>
+		</div>
+		<div class="list" id="div3" data-value="2" style="top: 32.6vh;">
+			<p class="listTxt" id="tab3"></p>
+		</div>
+		<div class="list" id="div4" data-value="3" style="top: 48.4vh;">
+			<p class="listTxt" id="tab4"></p>
+		</div>
+		<div class="list" id="div5" data-value="4" style="top: 64.2vh;">
+			<p class="listTxt" id="tab5"></p>
+		</div>
+
+		<div id="list_content">
+			<p id="content_info" class="context_words"></p>
+		</div>
+
+		<div id="cancel_btn" class="btn" onclick="cancel()">
+			<img src="../images/cancel.png" id="btn_icon">
+		</div>
+
+		<div id="content">
+			<p id="content_txt" class="context_words">My Name is Roshen Maghhan. I'm a 22 year old self taught programmer, who began coding at the age of 14. I studied under a full-scholarship in Taylor's University, and in July 2020, I graduated with a first class honours in Computer Science, with a CGPA of 3.8. I code and occasionally hack for fun, as a hobby. I have experience in web development, Android development, Augmented & virtual reality, software and hardware development, and many more. Click <a href='https://orangkata.my/tokoh/lelaki-genius-dari-malaysia-ni-dah-macam-iron-man-cipta-macam-macam/'>here</a>, to read an article about my inventions. <br><br>Throughout January 2020, to June 2020, I interned as an application developer in a company called Configura. Aside from technology, I also have interests in puzzle solving, such as Rubiks cubes and Sudoku.</p>
+		</div>
+
+		<div id="home_btn" class="btn" onclick="goHome()">
+			<img src="../images/home.png" id="btn_icon" />
+		</div>
+
+		<div id="contact">
+			<div class="social">
+				<img src="../images/linkedin.svg" class="social_icon" onclick="window.open('https://www.linkedin.com/in/roshen-maghhan-831b3498/')"/>
+			</div>
+			<div class="social">
+				<img src="../images/insta.svg" class="social_icon" onclick="window.open('https://www.instagram.com/roshenmaghhan/')"/>
+			</div>
+			<div class="social">
+				<img src="../images/gmail.svg" class="social_icon" onclick="window.open('mailto:roshenmaghhan@gmail.com')" />
+			</div>
+			<div class="social">
+				<img src="../images/twitter.svg" class="social_icon" onclick="window.open('https://twitter.com/roshennn')"/>
+			</div>
+		</div>
+
+		<div id="about_me" onclick="aboutMe()">
+			<div class="wrap">
+				<p id="about_txt">ABOUT ME</p>
+			</div>
+		</div>
+		
+		<div id="skills" class="sections" onclick="info(skillSet)">
+			<div id="innerExtra">
+				<img src="../images/skills-icon.png" class="icon"/>
+			</div>
+				<p class="extra_txt">SKILLS</p>
+		</div>
+		<div id="achievements" class="sections" onclick="info(winnings)">
+			<div id="innerExtra">
+				<img src="../images/achieve-icon.png" class="icon"/>
+			</div>
+				<p class="extra_txt">ACHIEVEMENTS</p>
+		</div>
+		<div id="projects" class="sections" onclick="info(projects)">
+			<div id="innerExtra">
+				<img src="../images/project-icon.png" class="icon"/>
+			</div>
+				<p class="extra_txt">PROJECTS</p>
+		</div>
+		
+	</div>
+	
+
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  	<script type="text/javascript" src="https://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -1,101 +1,38 @@
-var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+var screen = setInterval(rotate, 10);
 
-if(isMobile) {
-	window.location.assign("./mobile/index.html");
+function rotate() {  
+  if(window.innerWidth > window.innerHeight){
+    $("#rotate").css("display", "flex");
+  } else if (window.innerWidth < window.innerHeight) {
+    $("#rotate").css("display", "none");
+  } 
 }
+
+
 
 $(document).ready(function(){
 	$("#coded").delay(500).fadeIn();
 	$("#coded").delay(1500).fadeOut();
-	$("#background-wrap").delay(2500).animate({"backgroundColor" : "#FFE694"});	
-	$(".containers").delay(3000).fadeIn();
-	$("#about_me").delay(1000).animate({"left" : "4vw"});
-	$("#skills").delay(1000).animate({"left" : "28vw"});
-	$("#achievements").delay(1000).animate({"left" : "52vw"});
-	$("#projects").delay(1000).animate({"left" : "76vw"});
+	$("#background-wrap").delay(2500).animate({"backgroundColor" : "#FFE694"});
+	$("#about_me").delay(3000).slideDown(1000);
+	$("#skills").delay(4500).animate({"left" : "2.5vw"});
+	$("#projects").delay(4500).animate({"left" : "67.5vw"});
+	$("#achievements").delay(4500).animate({"bottom" : "2vh"});
+	$("#contact").delay(5000).animate({"right" : "2.5vw"});
 	$(".wrap").delay(5500).fadeIn();
-	$(".container_txt").delay(6000).fadeIn();
+	$("#about_txt").delay(6000).fadeIn();
 });
 
-var tabs = ["tab1","tab2","tab3","tab4","tab5"];
+var curValue = 0;
 
-var socials = ["LINKEDIN", "E-MAIL", "INSTAGRAM", "TWITTER", "SNAPCHAT"];
+var tabs = ["tab1", "tab2", "tab3", "tab4", "tab5"];
+var divs = ["#div1", "#div2", "#div3", "#div4", "#div5"];
+var listPos = ["1vh", "16.8vh", "32.6vh", "48.4vh", "64.2vh"];
+
+
 var skillSet = ["WEB DEV", "SOFTWARE DEV", "HARDWARE DEV", "ANDROID DEV", "VR/AR DEV"];
 var winnings = ["ORATORY", "MENTORING", "HACKATHONS", "PROGRAMMING", "PIANO"];
-var projectList = ["HARDWARE PROJECTS", "SOFTWARE PROJECTS", "VR/AR PROJECTS", "APP PROJECTS", "WEB PROJECTS"];
-
-var text = ["My Name is Roshen Maghhan. I'm a 22 year old self taught programmer, who began coding at the age of 14. I studied under a full-scholarship in Taylor's University, and in July 2020, I graduated with a first class honours in Computer Science, with a CGPA of 3.8. I code and occasionally hack for fun, as a hobby. I have experience in web development, Android development, Augmented & virtual reality, software and hardware development, and many more. Click <a href='https://orangkata.my/tokoh/lelaki-genius-dari-malaysia-ni-dah-macam-iron-man-cipta-macam-macam/'>here</a>, to read an article about my inventions. <br><br>Throughout January 2020, to June 2020, I interned as an application developer in a company called Configura. Aside from technology, I also have interests in puzzle solving, such as Rubiks cubes and Sudoku.",
-			"I usually prefer to code in Java, which is my strongest programming language. However, I am able to code in various languages as well, to cater for the requirements of other projects, such as web development projects, Android projects, Hardware projects, and many more. <br> <br> I am also able to code in HTML, CSS, Javascript, Jquery, PHP, SQL, C, Java, and C++. I am currently learning how to code in GO. Aside from programming languages, I also have an intermediate knowledge in Cyber Security, especially in web security. In addition to that, I also have knowledge in using GIT.",
-			"Throughout my life, I try my best to venture into different fields to expand my skill set, and knowledge. Some of which includes, debate, public speaking, piano, and many more. A great way to put my skills to test, was to compete with other individuals, to see where I stand, in what I've learned. <br><br> In my high school years, I was the captain of the debate team, the head of discpline of my school, and also represented my school in several oratory based competitions. Whereas in my university, I represented my school in several hackathons.", 
-			"As I started coding since I was 14, I've done about a 100 different projects. One of my very first few projects, was a simple calculator. Along the way, I continued to expand my projects into different branches of the computing industry, such as hardware, virtual and augmented reality, machine learning, games and many more. <br><br> My projects are usually done in my spare time, some of which, are done to make my life easier, and some, to sharpen my skills and get a better understanding of a system. My main and notable projects are usually kept in private, for possible future patents and intellectual property, however, my small-scaled projects can be found <a href='https://github.com/roshenmaghhan'>here</a>, on my github."];
-
-function changeContent(text) {
-	$("#content_txt").delay(500).fadeOut();
-	setTimeout(function(){
-		document.getElementById("content_txt").innerHTML = text;
-	}, 850);
-	$("#content_txt").delay(900).fadeIn();
-}
-
-function generateTabs(arr) {
-	for(var i = 0; i < 5; i++)
-		document.getElementById(tabs[i]).innerHTML = arr[i];
-}
-
-function backHome() {
-	$("#content").css("display", "flex").delay(1000).fadeOut();
-	$("#extra").delay(1500).animate({"opacity" : "0", "bottom" : "-100vh"});
-	$("#home_txt").delay(2000).fadeOut();
-	$("#home_button").delay(2500).animate({"width" : "0vw"});
-	$("#about_me").delay(3000).animate({"left" : "4vw"});
-	$("#skills").delay(3000).animate({"left" : "28vw"});
-	$("#achievements").delay(3000).animate({"left" : "52vw"});
-	$("#projects").delay(3000).animate({"left" : "76vw"});
-	$("#about_me, #skills, #achievements, #projects").fadeIn();
-	$(".wrap").delay(1500).slideDown();
-	$(".container_txt").delay(2000).fadeIn();
-}
-
-var list = ["#about_me,", "#skills,", "#achievements,", "#projects"];
-
-var sections = new Map();
-sections.set(0, socials);
-sections.set(1, skillSet);
-sections.set(2, winnings);
-sections.set(3, projectList);
-
-function toFade(num) {
-	var included = "";
-	for(var i = 0; i < 4; i++)
-		if(i != num)
-			included += list[i];
-	return included;	
-}
-
-$("#about_me, #skills, #achievements, #projects").click(function(){
-	var val = $(this).data('value');
-	$(toFade(val)).delay(500).fadeOut();
-	$(this).delay(1000).animate({"left" : "4vw"});
-	appear(text[val], sections.get(val));
-});
-
-function appear(text, arr) {
-	$(".container_txt").delay(1500).fadeOut();
-	$(".wrap").delay(2000).slideUp();
-	document.getElementById("content_txt").innerHTML = text;
-	$("#content").css("display", "flex").hide().delay(2500).fadeIn();
-	$("#home_button").delay(3000).animate({"width" : "20vw"});
-	$("#home_txt").delay(3500).fadeIn();
-	generateTabs(arr);
-	$("#extra").delay(4000).animate({"opacity" : "1", "bottom" : "12.5vh"});
-}
-
-var contact = new Map();
-contact.set('LINKEDIN', "https://www.linkedin.com/in/roshen-maghhan-831b3498/");
-contact.set('E-MAIL', "mailto:roshenmaghhan@gmail.com");
-contact.set('INSTAGRAM', "https://www.instagram.com/roshenmaghhan/");
-contact.set('TWITTER', "https://twitter.com/roshennn");
-contact.set('SNAPCHAT', "https://www.snapchat.com/add/roshennn");
+var projects = ["HARDWARE PROJECTS", "SOFTWARE PROJECTS", "VR/AR PROJECTS", "APP PROJECTS", "WEB PROJECTS"];
 
 var additionalInfo = new Map();
 
@@ -117,11 +54,82 @@ additionalInfo.set('VR/ARPROJECTS', 'After reading about Augmented Reality, I bu
 additionalInfo.set('APPPROJECTS', 'During my introduction to Mobile Applications class, my team and I built a game called CT, which was short for Critical Thinking. It was an Android Game, which had 20 different levels, and each user has 3 lives. For each question they got wrong, they would lose a life, and if all lives are lost, they would have to start all the way from the first level again. <br><br> During my internship in Configura, I was responsible for developing an application which could measure the dimensions of a room, using augmented reality. I used ARcore for the Augmented reality aspect of it, and since I completed the main requirements early, I proceeded to allow the app to get a digital blueprint of the measured area as well.');
 additionalInfo.set('WEBPROJECTS', 'Most of my web-based projects are developed in Hackathons. However, aside from that, I have built over 20 websites, most of which are my own personal websites. Currently, one of my projects, is building a website for a start-up company called Quostation. <br><br> As I have invested more of my time in Machine Learning and app development, I not been extremely focused on web development, therefore, recently, I decided to build a simple hyper-casual mobile app game, to sharpen my skills in HTML, CSS, and Javascript. The simple game works by scoring users based on moving a ball through barriers. You could try the game out <a href="https://roshenmaghhan.github.io/hyper-casual-Mobile-Web-App-Game/">here</a>.');
 
+function toFade(num, arr) {
+	var included = "";
+	for(var i = 0; i < arr.length; i++)
+		if(i != num)
+			included += arr[i] + ",";
+	return included;	
+}
 
-$('#extra').delegate('div.socials', 'click', function() {
-    var text = $(this).text().replace(/\s/g, "");
-	if(contact.has(text))
-		window.open(contact.get(text));
-	else
-		changeContent(additionalInfo.get(text)); 
+$(".list").click(function(){
+	var val = $(this).data('value');
+	curValue = val;
+	var text = $(this).text().replace(/\s/g, "");
+	$(toFade(val, divs)).delay(500).fadeOut();
+	$("#home_btn").delay(1000).animate({"opacity" : "0", "bottom" : "-105vh"});
+	$(this).delay(1500).animate({"top" : "1vh"});
+	$("#list_content").css("display", "flex").hide().delay(2000).slideDown();
+	$("#cancel_btn").delay(2500).animate({"opacity" : "1", "bottom" : "5vh"});
+	document.getElementById("content_info").innerHTML = additionalInfo.get(text);
+	$("#content_info").delay(3000).fadeIn();
 });
+
+
+function generateTabs(arr) {
+	for(var i = 0; i < 5; i++)
+		document.getElementById(tabs[i]).innerHTML = arr[i];
+}
+
+function aboutMe() {
+	dissapearHome();
+	contentAppear();
+}
+
+function info(arr) {
+	dissapearHome();
+	generateTabs(arr);
+	$(".list").delay(2500).animate({"width" : "95vw"});
+	$(".listTxt").delay(3000).fadeIn();
+	$("#home_btn").delay(3000).animate({"opacity" : "1", "bottom" : "5vh"});
+}
+
+function goHome() {
+	$(".listTxt, #content_txt").delay(500).fadeOut();
+	$(".list").delay(700).animate({"width" : "0vw"});
+	$("#content").delay(700).slideUp();
+	$("#home_btn").delay(1000).animate({"opacity" : "0", "bottom" : "-105vh"});
+	//RE-APPEARING BEGINS BELOW
+	$("#about_me").delay(1500).slideDown(1000);
+	$("#skills").delay(3000).animate({"left" : "2.5vw"});
+	$("#projects").delay(3000).animate({"left" : "67.5vw"});
+	$("#achievements").delay(3000).animate({"bottom" : "2vh"});
+	$("#contact").delay(3500).animate({"right" : "2.5vw"});
+	$(".wrap").delay(4000).fadeIn();
+	$("#about_txt").delay(4500).fadeIn();
+}
+
+function dissapearHome() {
+	$("#about_txt").delay(500).fadeOut();
+	$(".wrap").delay(1000).fadeOut();
+	$("#about_me").delay(1500).slideUp();
+	$("#skills").delay(2000).animate({"left" : "-100vw"});
+	$("#projects").delay(2000).animate({"left" : "110vw"});
+	$("#achievements").delay(2000).animate({"bottom" : "-110vh"});
+	$("#contact").delay(2000).animate({"right" : "-100vw"});
+}
+
+function contentAppear() {
+	$("#content").css("display", "flex").hide().delay(2500).slideDown(); // The delay must be based on the last animation of disspearHome().
+	$("#content_txt").delay(3000).fadeIn();
+	$("#home_btn").delay(3500).animate({"opacity" : "1", "bottom" : "5vh"});
+}
+
+function cancel() {
+	$("#content_info").delay(500).fadeOut();
+	$("#list_content").delay(1000).slideUp();
+	$("#cancel_btn").delay(1000).animate({"opacity" : "0", "bottom" : "-105vh"});
+	$(divs[curValue]).delay(1500).animate({"top" : listPos[curValue]});
+	$(toFade(curValue, divs)).delay(2000).fadeIn();
+	$("#home_btn").delay(2500).animate({"opacity" : "1", "bottom" : "5vh"});
+}
